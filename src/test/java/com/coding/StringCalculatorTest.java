@@ -32,5 +32,10 @@ public class StringCalculatorTest {
 	public void testNewLine() {
 		assertEquals(8,sc.add("1\n2,5"));
 	}
+	
+	@Test
+	public void testdifferentDelimiter() {
+		assertEquals(11,sc.add("//;\n2;9"));
+	}
 
 }
