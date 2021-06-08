@@ -19,8 +19,14 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void testTwoString() {
+	public void testTwoNumber() {
 		assertEquals(3,sc.add("1,2"));
 	}
+	
+	@Test
+	public void testThreeNumber() {
+		assertEquals(8,sc.add("1,2,5"));
+	}
+
 
 }
