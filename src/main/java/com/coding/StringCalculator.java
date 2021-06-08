@@ -11,7 +11,7 @@ public class StringCalculator {
 		else
 		{
 			int result=0;
-			String[] number = numbers.split("\\,");
+			String[] number = numbers.split(",|\n");
 			for(String num: number) {
 				result+=Integer.parseInt(num);
 			}

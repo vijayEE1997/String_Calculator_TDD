@@ -28,5 +28,9 @@ public class StringCalculatorTest {
 		assertEquals(8,sc.add("1,2,5"));
 	}
 
+	@Test
+	public void testNewLine() {
+		assertEquals(8,sc.add("1\n2,5"));
+	}
 
 }
