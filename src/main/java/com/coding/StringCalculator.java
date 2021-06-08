@@ -3,6 +3,9 @@ package com.coding;
 public class StringCalculator {
 	
 	static int count = 0;
+	
+	NumberParser numberParser = new NumberParser();
+	
 	public int getCalledCount() {
 		 ++count;
 		 return count;
@@ -18,12 +21,7 @@ public class StringCalculator {
 		}
 		else
 		{
-			String delimiter = ",";
-			if(numbers.matches("//(.*)\n(.*)")) {
-				delimiter = Character.toString(numbers.charAt(2));
-				numbers = numbers.substring(4);
-			}
-			String[] number = numbers.split(delimiter +"|\n");
+			String[] number = numberParser.splitOnDelimiter(numbers); 
 
 			return utilSum(number);
 		}

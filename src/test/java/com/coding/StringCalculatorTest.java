@@ -63,8 +63,13 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
+	public void testAnyLengthDelimitor() {
+			assertEquals(6,sc.add("//[***]\n1***2***3"));
+	}
+	
+	@Test
 	public void testGetCount_2() {
-		assertEquals(8,sc.getCalledCount());
+		assertEquals(9,sc.getCalledCount());
 	}
 
 }
