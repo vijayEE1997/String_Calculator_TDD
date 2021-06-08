@@ -8,15 +8,26 @@ public class NumberParser {
 		delimiter = "[,\n]";
 	}
 	
-	private String[] splitOnDelimiter(String numbers) {
+	public String[] splitOnDelimiter(String numbers) {
 		
 		if(numbers.startsWith("/")) {
 			return numbers
 					.substring(numbers.indexOf("\n")+1)
-					.split(numbers);
+					.split(extractDelimiter(numbers));
 		}
 		
 		return numbers.split(delimiter);
+	}
+
+	private String extractDelimiter(String numbers) {
+		String removeDelimiter;
+		int index_start = numbers.indexOf("\n");
+		
+		removeDelimiter = numbers.substring(0,index_start)
+								 .replace("//","")
+								 .replace("[","")
+								 .replace("]","");
+		return removeDelimiter;
 	}
 	
 }
