@@ -27,7 +27,7 @@ public class NumberParser {
 								 .replace("//","")
 								 .replace("[","")
 								 .replace("]","");
-		return removeDelimiter;
+		return "\\Q"+removeDelimiter+"\\E";
 	}
 	
 }

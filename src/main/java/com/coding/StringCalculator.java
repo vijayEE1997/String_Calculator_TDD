@@ -20,11 +20,6 @@ public class StringCalculator {
 		}
 		else
 		{
-//			String delimiter = ",";
-//			if(numbers.matches("//(.*)\n(.*)")) {
-//				delimiter = Character.toString(numbers.charAt(2));
-//				numbers = numbers.substring(4);
-//			}
 			String[] number = numberParser.splitOnDelimiter(numbers); 
 
 			return utilSum(number);
