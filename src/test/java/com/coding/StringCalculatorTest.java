@@ -56,5 +56,10 @@ public class StringCalculatorTest {
 			assertEquals(e.getMessage(),"negatives not allowed : -1,-6");
 		}
 	}
+	
+	@Test
+	public void testGetCount_2() {
+		assertEquals(7,sc.getCalledCount());
+	}
 
 }

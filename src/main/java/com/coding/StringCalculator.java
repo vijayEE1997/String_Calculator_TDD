@@ -2,7 +2,16 @@ package com.coding;
 
 public class StringCalculator {
 	
+	static int count = 0;
+	public int getCalledCount() {
+		 ++count;
+		 System.out.println("Called");
+		 return count;
+	}
+	
 	public int add(String numbers) {
+		
+		getCalledCount();
 		
 		if(numbers.equals(""))
 		{
