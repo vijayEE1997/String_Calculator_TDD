@@ -23,11 +23,11 @@ public class StringCalculator {
 					if(resultNegative=="")
 						resultNegative = num;
 					else
-						resultNegative +=","+num;
-				if(!resultNegative.equals(""))
-					throw new IllegalArgumentException("negatives not allowed : "+ resultNegative);
+						resultNegative +=(","+num);
 				result+=Integer.parseInt(num);
 			}
+			if(!resultNegative.equals(""))
+				throw new IllegalArgumentException("negatives not allowed : "+ resultNegative);
 			return result;
 		}
 	}

@@ -39,12 +39,21 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void testNegativesNotAllowed() {
+	public void testSingleNegativesNotAllowed() {
 		try {
 			sc.add("-1,5,6");			
 		}
 		catch (IllegalArgumentException e) {
-			assertEquals(e.getMessage(),"negatives not allowed : "+"-1");
+			assertEquals(e.getMessage(),"negatives not allowed : -1");
+		}
+	}
+	@Test
+	public void testMultipleNegativesNotAllowed() {
+		try {
+			sc.add("-1,5,-6");			
+		}
+		catch (IllegalArgumentException e) {
+			assertEquals(e.getMessage(),"negatives not allowed : -1,-6");
 		}
 	}
 
