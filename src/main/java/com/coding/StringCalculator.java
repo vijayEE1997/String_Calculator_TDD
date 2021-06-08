@@ -11,6 +11,7 @@ public class StringCalculator {
 		else
 		{
 			int result=0;
+			String resultNegative="";
 			String delimiter = ",";
 			if(numbers.matches("//(.*)\n(.*)")) {
 				delimiter = Character.toString(numbers.charAt(2));
@@ -18,6 +19,13 @@ public class StringCalculator {
 			}
 			String[] number = numbers.split(delimiter +"|\n");
 			for(String num: number) {
+				if(Integer.parseInt(num)<0)
+					if(resultNegative=="")
+						resultNegative = num;
+					else
+						resultNegative +=","+num;
+				if(!resultNegative.equals(""))
+					throw new IllegalArgumentException("negatives not allowed : "+ resultNegative);
 				result+=Integer.parseInt(num);
 			}
 			return result;

@@ -37,5 +37,15 @@ public class StringCalculatorTest {
 	public void testdifferentDelimiter() {
 		assertEquals(11,sc.add("//;\n2;9"));
 	}
+	
+	@Test
+	public void testNegativesNotAllowed() {
+		try {
+			sc.add("-1,5,6");			
+		}
+		catch (IllegalArgumentException e) {
+			assertEquals(e.getMessage(),"negatives not allowed : "+"-1");
+		}
+	}
 
 }
