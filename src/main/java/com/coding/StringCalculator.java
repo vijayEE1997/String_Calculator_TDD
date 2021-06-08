@@ -5,7 +5,6 @@ public class StringCalculator {
 	static int count = 0;
 	public int getCalledCount() {
 		 ++count;
-		 System.out.println("Called");
 		 return count;
 	}
 	
@@ -33,6 +32,8 @@ public class StringCalculator {
 						resultNegative = num;
 					else
 						resultNegative +=(","+num);
+				if(Integer.parseInt(num)>1000)
+					continue;
 				result+=Integer.parseInt(num);
 			}
 			if(!resultNegative.equals(""))

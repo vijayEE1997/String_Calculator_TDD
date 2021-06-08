@@ -58,8 +58,13 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
+	public void testNumberBiggerThenThousand() {
+			assertEquals(11,sc.add("1010,5,6"));
+	}
+	
+	@Test
 	public void testGetCount_2() {
-		assertEquals(7,sc.getCalledCount());
+		assertEquals(8,sc.getCalledCount());
 	}
 
 }
